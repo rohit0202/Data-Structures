@@ -11,13 +11,14 @@ class LinkedList:
         
     
     def add(self,item):
-        
+        #adds a node in the begining of the linked list        
         temp = Node(item)
         temp.next = self.head
         self.head = temp
         
 
     def display(self):
+        #displays the contents of the linked list
         current = self.head
         
         while(current.next != None):
@@ -26,6 +27,7 @@ class LinkedList:
         print(current.data)    
         
     def size(self):
+        #displays the size of the linked list
         counter =0
         current = self.head
         
@@ -38,6 +40,7 @@ class LinkedList:
 
 
     def search(self,item):
+        #searches for an item in the linked list
         
         current = self.head
         status ="Not Found"
@@ -53,6 +56,7 @@ class LinkedList:
 
 
     def remove(self,item):
+        #removes a particular node from the linked list
         
         current = self.head
         previous = None
@@ -71,6 +75,7 @@ class LinkedList:
             
             
     def insert(self,after_item,item):
+        #inserts a node anywhere in the linked list
         
         current = self.head
                 
@@ -90,6 +95,7 @@ class LinkedList:
             
              
     def pop(self):
+        #deletes the last node of the linked list
         
         previous = None
         current = self.head
@@ -102,6 +108,7 @@ class LinkedList:
         
     
     def index(self,item):
+        #displays the index of a node in linked list
         
         counter =0
         current = self.head
@@ -113,6 +120,7 @@ class LinkedList:
         print("Index of " +str(item) + " is " + str(counter))
 
     def append(self,item):
+        #inserts a node at the end of the linked list
         
         current = self.head
         
