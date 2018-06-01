@@ -1,3 +1,5 @@
+#determines the intersection point of two linked lists
+
 class Node:
     def __init__(self,data):
         self.data = data
@@ -10,6 +12,7 @@ class Linked_list_intersection:
     def __init__(self):
         self.head = None
         
+    #Basic operations of linked list
     
     def add(self,item):
         
@@ -27,6 +30,8 @@ class Linked_list_intersection:
         
         #print(counter)
         return counter
+    
+    
     
     @staticmethod
     def merge_point(linked_list1,linked_list2):
