@@ -1,4 +1,4 @@
-
+#Basic operations on a linked list in python
 class Node2:
     def __init__(self,data):
         self.data = data;
