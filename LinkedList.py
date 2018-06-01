@@ -1,24 +1,24 @@
-class Node:
+
+class Node2:
     def __init__(self,data):
         self.data = data;
         self.next = None;
 
 
 
-class LinkedList:
+class LinkedList007:
     def __init__(self):
         self.head = None;
         
     
     def add(self,item):
-        #adds a node in the begining of the linked list        
-        temp = Node(item)
+        
+        temp = Node2(item)
         temp.next = self.head
         self.head = temp
         
 
     def display(self):
-        #displays the contents of the linked list
         current = self.head
         
         while(current.next != None):
@@ -27,7 +27,6 @@ class LinkedList:
         print(current.data)    
         
     def size(self):
-        #displays the size of the linked list
         counter =0
         current = self.head
         
@@ -40,7 +39,6 @@ class LinkedList:
 
 
     def search(self,item):
-        #searches for an item in the linked list
         
         current = self.head
         status ="Not Found"
@@ -56,7 +54,6 @@ class LinkedList:
 
 
     def remove(self,item):
-        #removes a particular node from the linked list
         
         current = self.head
         previous = None
@@ -75,7 +72,6 @@ class LinkedList:
             
             
     def insert(self,after_item,item):
-        #inserts a node anywhere in the linked list
         
         current = self.head
                 
@@ -95,7 +91,6 @@ class LinkedList:
             
              
     def pop(self):
-        #deletes the last node of the linked list
         
         previous = None
         current = self.head
@@ -108,7 +103,6 @@ class LinkedList:
         
     
     def index(self,item):
-        #displays the index of a node in linked list
         
         counter =0
         current = self.head
@@ -120,7 +114,6 @@ class LinkedList:
         print("Index of " +str(item) + " is " + str(counter))
 
     def append(self,item):
-        #inserts a node at the end of the linked list
         
         current = self.head
         
@@ -128,10 +121,56 @@ class LinkedList:
             current = current.next
         
         current.next = Node2(item)
-         
- 
+        
+    
+    def cycle(self):
+        
+        #current = self.head
+        
+        self.head.next.next.next.next.next = self.head.next
+        
+        
+        
+    def detect_cycle(self):
+        
+        fast = self.head
+        slow = self.head
+        
+        while(fast != None and slow != None and fast.next !=None):
+            slow = slow.next
+            fast = fast.next.next
+            
+            if(slow == fast):
+                return "Cycle found " 
+        return "Cycle not found"
+    
+    
+    
+    def detect_and_remove(self):
+        
+        fast = self.head
+        slow = self.head
+        
+        while(fast != None and slow != None and fast.next !=None):
+            slow = slow.next
+            fast = fast.next.next
+            
+            if(slow == fast):
+                break
+            
+        
+        pointer1 = self.head
+        
+        pointer2 = slow
+        
+        while(pointer1.next != pointer2.next):
+            pointer1 = pointer1.next
+            pointer2 = pointer2.next
+            
+        pointer2.next = None
+    
 
-obj1 = LinkedList()
+obj1 = LinkedList007()
 
 
 obj1.add(89)
@@ -139,7 +178,7 @@ obj1.add(12)
 obj1.add(45)
 obj1.add(34)
 obj1.add(72)
-print("------------------------")
+
 
 obj1.display()
 obj1.size()
@@ -148,13 +187,47 @@ obj1.search(34)
 obj1.remove(45)
 obj1.display()
 print("------------------------")
+print("After insertion")
 obj1.insert(72,55)
 obj1.display()
 print("--------------------------")
+print("After poping")
 obj1.pop()
 obj1.display()
 print("-----------------------------")
 obj1.index(72)
 print("----------------")
+print("After appending")
 obj1.append(88)
 obj1.display()
+
+
+obj1.cycle()
+
+print("-------------------------------")
+print("After cycle")
+print(obj1.head.data)
+print(obj1.head.next.data)
+print(obj1.head.next.next.data)
+print(obj1.head.next.next.next.data)
+print(obj1.head.next.next.next.next.data)
+print(obj1.head.next.next.next.next.next.data)
+print(obj1.head.next.next.next.next.next.next.data)
+print(obj1.head.next.next.next.next.next.next.next.data)
+print(obj1.head.next.next.next.next.next.next.next.next.data)
+print(obj1.head.next.next.next.next.next.next.next.next.next.data)
+
+print("----------------------------------")
+print("Detecting cycle")
+print(obj1.detect_cycle())
+
+print("----------------------------------")
+print("removing cycle")
+obj1.detect_and_remove()
+print(obj1.detect_cycle())
+
+print(obj1.head.data)
+print(obj1.head.next.data)
+print(obj1.head.next.next.data)
+print(obj1.head.next.next.next.data)
+print(obj1.head.next.next.next.next.data)
