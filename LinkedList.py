@@ -12,13 +12,14 @@ class LinkedList007:
         
     
     def add(self,item):
-        
+        #adding a node at the front of a linked list        
         temp = Node2(item)
         temp.next = self.head
         self.head = temp
         
 
     def display(self):
+        #displays the content of a linked list
         current = self.head
         
         while(current.next != None):
@@ -27,6 +28,7 @@ class LinkedList007:
         print(current.data)    
         
     def size(self):
+        #prints the size of a linked list
         counter =0
         current = self.head
         
@@ -39,7 +41,7 @@ class LinkedList007:
 
 
     def search(self,item):
-        
+        #searches an element in a linked list        
         current = self.head
         status ="Not Found"
         
@@ -54,6 +56,7 @@ class LinkedList007:
 
 
     def remove(self,item):
+        #removes an item form the linked list, provided repitition is not there.
         
         current = self.head
         previous = None
@@ -72,6 +75,7 @@ class LinkedList007:
             
             
     def insert(self,after_item,item):
+        #inserts an item/node at a specified position in a linked list.
         
         current = self.head
                 
@@ -91,6 +95,7 @@ class LinkedList007:
             
              
     def pop(self):
+        #removes the last element from the linked list.
         
         previous = None
         current = self.head
@@ -103,6 +108,7 @@ class LinkedList007:
         
     
     def index(self,item):
+        #prints the index/position of a node/item
         
         counter =0
         current = self.head
@@ -114,7 +120,7 @@ class LinkedList007:
         print("Index of " +str(item) + " is " + str(counter))
 
     def append(self,item):
-        
+        #appends an item/node at the end of the linked list.        
         current = self.head
         
         while(current.next != None):
@@ -124,6 +130,7 @@ class LinkedList007:
         
     
     def cycle(self):
+        #creates a cycle in the linked list
         
         #current = self.head
         
@@ -132,6 +139,7 @@ class LinkedList007:
         
         
     def detect_cycle(self):
+        #detects if a cycle is present in the linked list
         
         fast = self.head
         slow = self.head
@@ -147,6 +155,7 @@ class LinkedList007:
     
     
     def detect_and_remove(self):
+        #detects and removes the loop in a linked list
         
         fast = self.head
         slow = self.head
