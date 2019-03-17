@@ -1,5 +1,5 @@
+#sample list
 list1 = [34,67,12,89,45]
-
 
 for i in range(len(list1)):
     
